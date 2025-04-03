@@ -16,7 +16,7 @@ jobs:
 
       # Paso 1: InfraConfig (Configuración de infraestructura)
       - name: Configurar infraestructura
-        uses: ./.github/actions/infraConfig/action.yml
+        uses: ./.github/actions/InfraConfig/action.yml
 
       # Paso 2: Build (Construcción de la aplicación)
       - name: Build
