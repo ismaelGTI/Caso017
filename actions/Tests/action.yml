@@ -1,0 +1,20 @@
+name: "Tests"
+description: "Ejecuta los tests con los 2 paramétros y tendra finalmente un echo"
+
+inputs:     #Entradas
+
+    param1:
+      description: "Primer test"
+      required: true    #Obligatorio
+  
+    param2:
+      description: "Segundo test"
+      required: true    #Obligatorio
+
+runs:
+  using: "composite"
+  steps:
+    - run: chmod +x actions/Test/entrypoint.sh  #Hace a entrypoint.sh ejecutable
+      shell: bash
+    - run: ./actions/Tests/entrypoint.sh  ${{ inputs.param1}} ${{ inputs.param2 }} #Ejecución de entrypoint.sh de Test con los 2 paramétros
+      shell: bash

@@ -1,0 +1,9 @@
+name: "InfraConfig"
+description: "Configura la infraestructura para la app (CI_CD)"
+runs:
+  using: "composite"
+  steps:
+    - run: chmod +x actions/InfraConfig/entrypoint.sh #Comnado linux para hacer ejecutable entrypoint.sh
+      shell: bash
+    - run: ./actions/InfraConfig/entrypoint.sh        #EJECUCIÓN DE entrypoint.sh
+      shell: bash
