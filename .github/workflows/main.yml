@@ -16,7 +16,8 @@ jobs:
 
       # Paso 1: InfraConfig (Configuración de infraestructura)
       - name: Configurar infraestructura
-        uses: ./.github/actions/InfraConfig/action.yml
+        uses: ./.github/actions/InfraConfig
+
 
       # Paso 2: Build (Construcción de la aplicación)
       - name: Build
@@ -28,7 +29,7 @@ jobs:
 
       # Paso 4: Tests (Ejecutar tests)
       - name: Ejecutar tests
-        uses: ./.github/actions/Tests/action.yml
+        uses: ./.github/actions/Tests
         with:
           param1: 'Test1'
           param2: 'Test2'
