@@ -14,7 +14,7 @@ inputs:     #Entradas
 runs:
   using: "composite"
   steps:
-    - run: chmod +x actions/Test/entrypoint.sh  #Hace a entrypoint.sh ejecutable
+    - run: chmod +x $GITHUB_ACTION_PATH/entrypoint.sh
       shell: bash
-    - run: ./actions/Tests/entrypoint.sh  ${{ inputs.param1}} ${{ inputs.param2 }} #Ejecución de entrypoint.sh de Test con los 2 paramétros
+    - run: $GITHUB_ACTION_PATH/entrypoint.sh
       shell: bash
