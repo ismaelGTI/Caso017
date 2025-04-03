@@ -1,9 +1,9 @@
 name: "InfraConfig"
-description: "Configura la infraestructura para la app (CI_CD)"
+description: "Configura la infraestructura para la app (CI/CD)"
 runs:
   using: "composite"
   steps:
-    - run: chmod +x actions/InfraConfig/entrypoint.sh #Comnado linux para hacer ejecutable entrypoint.sh
+    - run: chmod +x $GITHUB_ACTION_PATH/entrypoint.sh
       shell: bash
-    - run: ./actions/InfraConfig/entrypoint.sh        #EJECUCIÓN DE entrypoint.sh
+    - run: $GITHUB_ACTION_PATH/entrypoint.sh
       shell: bash
